@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamificaEdu</title>
+    <link rel="stylesheet" href="{% static '/style/home.css'%}">
+    <link rel="shortcut icon" href="style/home.css" type="image/x-icon">
+
+</head>
+<body>
+    <div class="wrapper">
+        <section>
+            <header class="main-header">
+                
+                <div class="logo-wrap">
+                    <a aria-label="Notion – Home" class="logo" href="#">
+                        <img src="{% static '/assets/logo.png'%}" alt="logo" class="media logo-media">
+                        <span class="logo-title">GamificaEdu</span>
+                    </a>
+                </div>
+
+                <div class="desktop-actions">
+                    <nav class="navigation primary">
+
+                            <ul class="nav-list nav-list-sales">
+                                
+                                <div class="divider "></div>
+                                <li class="submenu">
+                                    <li class="submenu-item">
+                                        <a href="/accounts/login/"> Login</a>
+                                    </li>
+                                    <button class="submenu-item primary-button">
+                                        <a href="/accounts/signup"> Sign Up</a>
+                                    
+                                    </button>
+                                </li>
+                            </ul>
+
+                    </nav>
+                </div>
+        
+                <div class="mobile-actions">
+
+                    <button class="action primary-button">
+                        <a role="button" href="#" class="button-link">  </a>
+                    </button>
+                    <button aria-haspopup="menu" aria-expanded="true"  class="menu-toggle">
+                        <svg viewBox="0 0 30 30" class="menu" style="width: 22px; height: 100%; display: block; fill: inherit; flex-shrink: 0;"><path d="M2,4v2h26V4H2z M2,16h26v-2H2V16z M2,26h26v-2H2V26z"></path></svg>
+                    </button>
+                </div>
+            </header>
+        </section>
+
+        <main class="main-content flex flex-column">
+
+            <section class="section primary-page-section flex gap-2 flex-row justify-space-between mobile-center">
+
+                <section class="content mobile-center flex flex-column">
+
+                    <header class="content-header header">
+                        <h1 class="content-title page-title">Gamificação</h1>
+
+                        <h2 class="content-subtitle page-subtitle">
+                            Transformando a Educação com Gamificação
+                        </h2>
+                    </header>
+                    <!-- <div class="content-body mobile-center">
+                        <button class="submenu-item primary-button">Lorem ipsum dolor.</button>
+                    </div> -->
+                    <footer class="section-footer mobile-center">
+                        <p class="footer-p">
+                            Despertando o interesse dos alunos enquanto potencializa o aprendizado, nossa missão é revolucionar o ensino.
+                        </p>
+                    </footer>
+
+                </section>
+
+                <aside class="section-aside-banner mobile-center">
+                    <img src="{% static '/assets/home-page-hero.avif'%}" alt="ilustration" class="image aside-image">
+                </aside>
+
+            </section>
+            
+    
+            {% comment %} <section class="section flex flex-row justify-space-between gap-2 ">
+
+                <section class="content  shadow  flex flex-column flex-basis-1">
+
+                    <header class="content-header header flex-grow-1">
+                        <h1 class="content-title ">Lorem ipsum dolor sit amet..</h1>
+                        <h2 class="content-subtitle page-subtitle">
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit.
+                        </h2>
+                    </header>
+                    <div class="content-body  flex-grow-1">
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aperiam animi corporis officia nesciunt illum mini.
+                        </p>       
+                                
+                    </div>
+                    <footer class="section-footer">
+                        <p class="footer-p">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aperiam animi corporis officia nesciunt illum mini.
+                        </p>   
+                    </footer>
+
+                </section>
+
+                <aside class="section-aside-banner gallery mobile-center flex-basis-1 flex justify-end flex-wrap">
+                    
+                </aside>
+
+            </section> {% endcomment %}
+
+        </main>
+    </div>
+</body>
+
+</html>

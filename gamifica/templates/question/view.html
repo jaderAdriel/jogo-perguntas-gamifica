@@ -1,0 +1,36 @@
+{% extends './../Base.html' %}
+{% load static %}
+
+{% block navi %}
+      <div class="pagetitle">
+        <h1>View question</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">
+                <a href="/question/list/">Questions</a>
+            </li>
+            <li class="breadcrumb-item active">View questions</li>
+          </ol>
+        </nav>
+      </div>
+{% endblock %}
+
+{% block content %}
+<div class="section">
+    <div class="row ">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-question-circle"></i> {{ question.description }}</h5>
+                    {% if question.image %}
+                        <img src="{{ question.image.url }}" class="card-img-top img-fluid" alt="Imagem da pergunta">
+                    {% endif %}
+
+                    <p class="card-text">Resposta: {{ question.answear }}</p>
+                </div>
+            </div>
+
+    </div>
+</div>
+
+{% endblock %}

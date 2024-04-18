@@ -1,0 +1,71 @@
+{% extends './../Base.html' %}
+{% load static %}
+
+
+{% block navi %}
+      <div class="pagetitle">
+        <h1>Edit question</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">
+                <a href="/question/list/">My questions</a>
+            </li>
+            <li class="breadcrumb-item active">Edit question</li>
+          </ol>
+        </nav>
+      </div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Form</h5>
+
+      <!-- Vertical Form -->
+
+      
+      <form class="card-form form" method="POST" action="." enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <ul>
+            <li>
+                <div class="field">
+                    {{ form.description }}
+                    {{ form.description.label_tag }}
+                </div>
+                {{ form.description.errors }}
+            </li>
+            <div class="field__group">
+                
+                <li>
+                    <div class="field">
+                        {{ form.answear }}
+                        {{ form.answear.label_tag }}
+                    </div>
+                    {{ form.answear.errors }}
+                    
+                </li>
+            </div>
+            
+            <li class="field__group">
+                <div>
+                    {{ form.image.label_tag }}
+                    {{ form.image }}
+                </div>
+                {{ form.image.errors }}
+            </li>
+        </ul>
+        <div class="actions">
+            <button class="btn submit" type="submit">
+                Salvar
+            </button>
+        </div>
+    </form><!-- Vertical Form -->
+
+    </div>
+  </div>
+  
+{% endblock %}
