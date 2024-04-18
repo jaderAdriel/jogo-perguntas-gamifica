@@ -1,0 +1,97 @@
+{% extends './../base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static '/style/registration/registrar.css' %}">
+    <title> Entre </title>
+{% endblock %}
+
+{% block content %}
+    <main class="content">
+        
+        <div class="card-wrapper">
+
+            <div class="card">
+                <header class="card__header">
+                    <div class="logo">
+                        <img src="{% static '/assets/logo.png' %}" alt="">
+                        <span class="logoName">
+                            Gamifica<span class="text-secondary">Edu</span>
+                        </span>
+                    </div>
+                    <h2 class="subtitle">Criar sua Conta do GamificaEdu</h2>
+                </header>
+                <div class="card__body">
+                    <form class="card-form form" method="POST" action="." enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <ul>
+                            <li>
+                                <div class="field">
+                                    {{ form.name }}
+                                    {{ form.name.label_tag }}
+                                </div>
+                                {{ form.nome.errors }}
+                            </li>
+                            <div class="field__group">
+                                
+                                <li>
+                                    <div class="field">
+                                        {{ form.email }}
+                                        {{ form.email.label_tag }}
+                                    </div>
+                                    {{ form.email.errors }}
+                                    
+                                </li>
+            
+                                <li>
+                                    <div class="field">
+                                        {{ form.username }}
+                                        {{ form.username.label_tag }}
+                                    </div>
+                                    {{ form.username.errors }}
+                                </li>
+                            </div>
+                            
+                            <li class="field__group">
+                                <div>
+                                    <label for="id_profile_pic">Profile picture</label>
+                                    {{ form.profile_pic }}
+                                </div>
+                                {{ form.contato.errors }}
+                            </li>
+                            <div class="field__group">
+            
+                                <li>
+                                    <div class="field">
+                                        {{ form.password1 }}
+                                        {{ form.password1.label_tag }}
+                                    </div>
+                                    {{ form.password.errors }}
+                                </li>
+            
+                                <li>
+                                    <div class="field">
+                                        {{ form.password2 }}
+                                        <label for="password_2">Confirm password</label>
+                                    </div>
+                                    {{ form.password2.errors }}
+                                </li>
+                            </div>
+                        </ul>
+                        <div class="actions">
+                            <a href="/accounts/login" class="btn text-secondary">Faça login em vez disso</a>
+                            <button class="btn submit" type="submit">
+                                Cadastrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+{% endblock %}
+
+
