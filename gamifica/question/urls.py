@@ -8,4 +8,5 @@ urlpatterns = [
     path('list/', views.listQuestions, name='list_questions'),
     path('list/all/', views.listAllQuestion, name='list_all_questions'),
     path('view/<int:id>/', views.viewQuestion, name='view_question'),
+    path('dinamica/', views.dinamica, name='check_answer'),
 ]

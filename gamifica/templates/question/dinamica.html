@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dinamica</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static '/assets/logo.png' %}" rel="icon">
+  <link href="{% static '/style/dinamica.css' %}" rel="stylesheet">
+  <script src="{% static '/js/Timer.js' %}" defer></script>
+  <script src="{% static '/js/dinamica.js' %}" defer></script>
+
+
+</head>
+
+<body>
+
+    <div class="content">
+
+        <div class="header">
+            <div class="timer item">
+                Nova pergunta em<div id="time" class="data">00:00</div>
+            </div>
+
+                {% comment %} <audio id="myAudio" controls class="">
+                    <source src="{% static '/audio/audio.mp3' %}" type="audio/mp3">
+                    Seu navegador não suporta áudio HTML5.
+                </audio> {% endcomment %}
+        </div>
+
+    {% for question_with_alternatives in questions_with_alternatives %}
+        <div class="question hide">
+            <section class="radio-section">
+                <div class="radio-list">
+                    <div class='header'>
+                    <h1>{{ question_with_alternatives.question.description }}</h1>
+                    
+                        {% if question_with_alternatives.question.image %}
+                        <img src="{{ question_with_alternatives.question.image.url }}" class="question-image" alt="Imagem da pergunta">
+                        {% endif %}
+                    </div>
+
+                    
+                    
+                    {% for alternative in question_with_alternatives.alternatives %}
+                    
+                        <div class="radio-item alternative">
+                            <input 
+                                name="radio" 
+                                id="radio{{ alternative.id }}" 
+                                type="radio"
+                                data-isAnswer="{{ alternative.isAnswer }}" 
+                            > <label for="radio{{ alternative.id }}">{{ alternative.text }}</label>
+                        </div>
+                    
+                    {% endfor %}
+                    
+                    <button type="button" id="confirmButton" class="btn btn-outline-primary">Confirmar</button>
+
+
+                </div>
+            </section>
+        </div>
+    {% endfor %}
+
+    </div>
+</body>
+
+</html>

@@ -32,8 +32,26 @@ class Question( models.Model ):
         null=True
     )
 
-    answear = models.CharField(
+
+
+
+class Alternative( models.Model ):
+    text = models.CharField(
         max_length=255,
         blank=False,
         null=False
     )
+
+    question = models.ForeignKey(
+        Question, 
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False
+    )
+
+    isAnswer = models.BooleanField(
+        default=False,
+        blank=False,
+        null=False
+    )
+

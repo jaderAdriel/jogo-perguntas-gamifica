@@ -36,17 +36,6 @@
                 </div>
                 {{ form.description.errors }}
             </li>
-            <div class="field__group">
-                
-                <li>
-                    <div class="field">
-                        {{ form.answear }}
-                        {{ form.answear.label_tag }}
-                    </div>
-                    {{ form.answear.errors }}
-                    
-                </li>
-            </div>
             
             <li class="field__group">
                 <div>
@@ -55,6 +44,72 @@
                 </div>
                 {{ form.image.errors }}
             </li>
+
+            <li class="field__group alternativas">
+                <div class="col-sm-7">
+                    <div data-mdb-input-init class="form-outline">
+                        <div class="">
+                            <label class="form-label" for="id_alternativa1">Alternativa 1</label>
+                            <input type="text" id="id_alternativa1" class="form-control" name="alternativa" />
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="id_isAnswer1" name="is_answer" value="0" />
+                            <label class="form-check-label" for="id_isAnswer1">É a resposta</label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="field__group alternativas">
+                <div class="col-sm-7">
+                    <div data-mdb-input-init class="form-outline">
+                        <div class="">
+                            <label class="form-label" for="id_alternativa2">Alternativa 2</label>
+                            <input type="text" id="id_alternativa2" class="form-control" name="alternativa" />
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="id_isAnswer2" name="is_answer" value="1" />
+                            <label class="form-check-label" for="id_isAnswer2">É a resposta</label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="field__group alternativas">
+                <div class="col-sm-7">
+                    <div data-mdb-input-init class="form-outline">
+                        <div class="">
+                            <label class="form-label" for="id_alternativa3">Alternativa 3</label>
+                            <input type="text" id="id_alternativa3" class="form-control" name="alternativa" />
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="id_isAnswer3" name="is_answer" value="2" />
+                            <label class="form-check-label" for="id_isAnswer3">É a resposta</label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="field__group alternativas">
+                <div class="col-sm-7">
+                    <div data-mdb-input-init class="form-outline">
+                        <div class="">
+                            <label class="form-label" for="id_alternativa4">Alternativa 4</label>
+                            <input type="text" id="id_alternativa4" class="form-control" name="alternativa" />
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="id_isAnswer4" name="is_answer" value="3" />
+                            <label class="form-check-label" for="id_isAnswer4">É a resposta</label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
         </ul>
         <div class="actions">
             <button class="btn submit" type="submit">
